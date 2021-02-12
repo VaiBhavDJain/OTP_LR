@@ -1,12 +1,15 @@
 from django.contrib import admin
-from .models import OTP
+from .models import User,OTP
 # Register your models here.
-"""
-class OTPAdmin(admin.ModelAdmin):
-    list_display = ('id','user','otp','date', 'expiry_date')
+
+class OTPSAdmin(admin.ModelAdmin):
+    list_display = ('id','user','otp')
+
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('id','username','email','password','first_name', 'last_name')
 
 
-admin.site.register(OTP, OTPAdmin)
-"""
-admin.site.register(OTP)
+admin.site.register(User,UserAdmin)
+admin.site.register(OTP,OTPSAdmin)
+
 
